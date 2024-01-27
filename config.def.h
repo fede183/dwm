@@ -62,6 +62,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *browsercmd[] = { "qutebrowser", NULL }
 
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
@@ -103,9 +104,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
-	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-    { 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
-    { 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+	{ 0,                       	XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+    	{ 0,                       	XF86XK_AudioMute, spawn, {.v = mutevol } },
+    	{ 0,                       	XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+
+	{ MODKEY|ShiftMask,             XK_n, spawn,          {.v = browsercmd } },
 };
 
 /* button definitions */
