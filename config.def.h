@@ -107,6 +107,9 @@ static const Key keys[] = {
 	{ 0,                       	XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
     	{ 0,                       	XF86XK_AudioMute, spawn, {.v = mutevol } },
     	{ 0,                       	XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+	{ MODKEY,                       XK_F2, spawn, {.v = downvol } },
+    	{ MODKEY,                       XK_F3, spawn, {.v = mutevol } },
+    	{ MODKEY,                       XK_F4, spawn, {.v = upvol   } },
 
 	{ MODKEY|ShiftMask,             XK_n, spawn,          {.v = browsercmd } },
 };
