@@ -13,13 +13,13 @@ static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
 static const char col_bg[]     = "#282a36";
 static const char col_fg[]     = "#f8f8f2";
 static const char col_cyan[]   = "#8be9fd";
-static const char col_pink[]   = "#ff79c6";
-static const char col_purple[] = "#bd93f9";
+static const char col_blue[]   = "#ff79c6";
+static const char col_ocean[] = "#2bb5d2";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg, col_bg, col_pink },
-	[SchemeSel]  = { col_bg, col_purple, col_cyan  },
+	[SchemeNorm] = { col_fg, col_bg, col_blue },
+	[SchemeSel]  = { col_bg, col_ocean, col_cyan  },
 };
 
 
@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_purple, "-sf", col_bg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_ocean, "-sf", col_bg, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "qutebrowser", NULL };
 
